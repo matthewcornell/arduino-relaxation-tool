@@ -17,8 +17,8 @@ Here is an example of the individual projects:
 * Reading a pot: [Reading a Potentiometer (analog input)](https://www.arduino.cc/en/Tutorial/Potentiometer)
 * Driving a piezo motor: [Figure 8-8 of the Arduino Cookbook](https://books.google.com/books?id=raHyKejOBF4C&pg=PA276&lpg=PA276&dq=figure+8-8+connecting+a+vibration+motor&source=bl&ots=gmm0_Rgz7K&sig=LKvfqXUdqfFy6ZoNYdsy1oS8n7M&hl=en&sa=X&ved=0CB8Q6AEwAGoVChMI38mBqpnmxwIVwj4-Ch15Hgby#v=onepage&q=figure%208-8%20connecting%20a%20vibration%20motor&f=false)
 
-Parts:
 
+# Parts
 * 2 x 1K Ohm resistors
 * 2 x 2N2222 transistors
 * 2 x 1N4001 diodes
@@ -27,3 +27,8 @@ Parts:
 * 2 x 33 Ohm resistors
 * 2 x 10K Ohm circuit board pots
 
+
+# Assembly
+I used a basic Arduino breadboard - it was pretty straighforward. I didn't have any 33 Ohm resistors so I had to use
+3 x 10 Ohm ones in series. For the motors I simply applied some heat shrink tubing for something to hold onto. I
+looked into more durable cases (I tried ping pong balls), but this worked OK for the prototype. 
