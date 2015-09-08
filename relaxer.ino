@@ -29,7 +29,6 @@ void setup() {
     pinMode(cycleLedPin, OUTPUT);
     pinMode(motor1Pin, OUTPUT);
     pinMode(motor2Pin, OUTPUT);
-    Serial.begin(9600);
 }
 
 void loop() {
@@ -58,9 +57,6 @@ void adjustPeriodAndDurationBasedOnPots() {
     int durationValue = analogRead(pot2Pin);         // ""
     int period = (1.8573 * periodValue) + 100;       // line equation to convert above to ~ [100 ms, 2000 ms]
     int duration = (1.8573 * durationValue) + 100;   // ""
-    
-    Serial.print("period: ");   Serial.print(periodValue);   Serial.print(", "); Serial.println(period);
-    Serial.print("duration: "); Serial.print(durationValue); Serial.print(", "); Serial.println(duration);
     vibePeriod = period;
     vibeDuration = duration;
 }

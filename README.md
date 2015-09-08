@@ -1,5 +1,5 @@
 # arduino-relaxation-tool
-This project contains the code and circuit diagram to create a simple vibration-based relaxation tool using an Arduino.
+This project contains the code and circuit diagram to create a simple vibration-based relaxation tool using an [Arduino](https://www.arduino.cc/).
 The tool has two small motors (like the ones in cell phones) that you hold in each hand (one motor per hand). The motors
 are alternately pulsed back and forth between the left and right hands, with two potentiometers controlling how long
 each motor stays on, and the delay between switching. Experiment to find a relaxing combination! If you try it with your
@@ -33,3 +33,8 @@ I used a basic Arduino breadboard - it was pretty straighforward. I didn't have 
 3 x 10 Ohm ones in series. For the motors I simply applied some heat shrink tubing for something to hold onto. I
 looked into more durable cases (I tried ping pong balls), but this worked OK for the prototype. See the pic
 [here](https://github.com/matthewcornell/arduino-relaxation-tool/blob/master/motor-closeup.JPG).
+
+
+# Code
+The code manages four pins - two analog in ones for reading the pots, and two digital out ones for controlling the motors. The fifth pin is the built in LED digital out one that I pulse for effect. The pots are read by `adjustPeriodAndDurationBasedOnPots()` and saved into two variables: `vibePeriod` (how often the motor vibrates in ms: a range ~ [100 ms, 2000 ms]) and `vibeDuration` (how long the motor vibrates, in the same time range). The last variable is `isCycleLedOn`, which alternates between 0 and 1 with each cycle. After [setup()](https://www.arduino.cc/en/Reference/Setup) initializes the pins, The standard Arduino [loop()](https://www.arduino.cc/en/Reference/Loop) function just reads the pots (which sets the two control variables), cycles the first motor, and repeats for the second one. `cycleMotor()` turns on the motor, cycles the LED, waits the appropriate duration, then repeats to turn the motor off. Finally, `adjustPeriodAndDurationBasedOnPots()` reads the analog value from each pot (a value between 0 and 1023) and scales it to a range between ~100ms to 2000ms, which seemed to work pretty well. (Any faster was irritating, and any slower would have been boring :-)
+
