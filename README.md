@@ -31,4 +31,5 @@ Here is an example of the individual projects:
 # Assembly
 I used a basic Arduino breadboard - it was pretty straighforward. I didn't have any 33 Ohm resistors so I had to use
 3 x 10 Ohm ones in series. For the motors I simply applied some heat shrink tubing for something to hold onto. I
-looked into more durable cases (I tried ping pong balls), but this worked OK for the prototype. 
+looked into more durable cases (I tried ping pong balls), but this worked OK for the prototype. See the pic
+[here](https://github.com/matthewcornell/arduino-relaxation-tool/blob/master/motor-closeup.jpg).
